@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Marathi Graphic Designer & Video Editor Portfolio">
-  <title>Marathi Graphic Designer & Video Editor | Portfolio</title>
+  <meta name="description" content="मराठी ग्राफिक डिझायनर आणि व्हिडिओ एडिटर पोर्टफोलिओ">
+  <title>मराठी ग्राफिक डिझायनर & व्हिडिओ एडिटर | Portfolio</title>
 
   <!-- Google Fonts: Poppins & Yantramanav -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,13 +13,14 @@
 
   <style>
     /* =========================================================
-       CSS STYLING (Dark Theme + Responsive)
+       CSS STYLING (Dark Premium Theme + Mobile Optimized)
        ========================================================= */
     :root {
       --bg-dark: #0d0f14;
       --bg-card: #161922;
       --primary: #ff5e14;
       --primary-hover: #e04f0d;
+      --whatsapp: #25d366;
       --text: #f0f2f5;
       --text-muted: #9aa1b1;
       --border: #262b37;
@@ -49,7 +50,7 @@
       margin: 0 auto;
     }
 
-    /* Header & Navigation */
+    /* Header */
     .site-header {
       background: rgba(13, 15, 20, 0.9);
       backdrop-filter: blur(10px);
@@ -84,7 +85,6 @@
       gap: 0.8rem;
     }
 
-    /* Language Switcher Button */
     .lang-btn {
       background: #202531;
       border: 1px solid var(--border);
@@ -108,7 +108,7 @@
     /* Hero Section */
     .hero-section {
       text-align: center;
-      padding: 4.5rem 1rem 3rem;
+      padding: 4.5rem 1rem 3.5rem;
       background: radial-gradient(circle at center top, rgba(255, 94, 20, 0.12) 0%, transparent 65%);
     }
 
@@ -125,7 +125,7 @@
     }
 
     .hero-content h1 {
-      font-size: clamp(1.9rem, 4.8vw, 3rem);
+      font-size: clamp(1.9rem, 4.8vw, 3.2rem);
       font-weight: 900;
       margin-bottom: 0.8rem;
       color: #fff;
@@ -135,7 +135,7 @@
       color: var(--text-muted);
       font-size: 1.1rem;
       max-width: 680px;
-      margin: 0 auto 1.6rem;
+      margin: 0 auto 1.8rem;
     }
 
     .hero-buttons {
@@ -146,8 +146,10 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
@@ -177,7 +179,19 @@
       color: var(--primary);
     }
 
-    /* Section Headers */
+    .btn-whatsapp {
+      background: #205c3b;
+      color: #fff;
+      border: 1px solid #2ecc71;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--whatsapp);
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
     .section-wrap {
       padding: 3.5rem 0;
     }
@@ -197,7 +211,7 @@
       color: var(--text-muted);
     }
 
-    /* Gallery Filters */
+    /* Category Filters */
     .filter-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -226,7 +240,7 @@
       border-color: var(--primary);
     }
 
-    /* Image Gallery Grid */
+    /* Gallery Grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -291,11 +305,11 @@
       font-weight: 700;
     }
 
-    /* Video Section Grid */
+    /* Video Section */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 1.6rem;
+      gap: 1.8rem;
     }
 
     @media (max-width: 480px) {
@@ -310,6 +324,8 @@
       overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .video-card:hover {
@@ -334,7 +350,18 @@
     }
 
     .video-info {
-      padding: 1.1rem;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .video-header-tags {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
     }
 
     .video-tag {
@@ -342,8 +369,16 @@
       text-transform: uppercase;
       color: #ff334b;
       font-weight: 700;
-      display: inline-block;
-      margin-bottom: 0.3rem;
+    }
+
+    .rating-badge {
+      font-size: 0.8rem;
+      color: #ffd700;
+      font-weight: 700;
+      background: rgba(255, 215, 0, 0.12);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
     }
 
     .video-info h3 {
@@ -354,6 +389,60 @@
     .video-info p {
       color: var(--text-muted);
       font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-contact-btn {
+      align-self: flex-start;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      background: rgba(37, 211, 102, 0.15);
+      color: var(--whatsapp);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-contact-btn:hover {
+      background: var(--whatsapp);
+      color: #000;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--whatsapp);
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      color: #fff;
+    }
+
+    .whatsapp-icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
     }
 
     /* Lightbox Modal */
@@ -418,18 +507,33 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      max-height: 65vh;
+      max-height: 60vh;
     }
 
     .lightbox-media img {
       max-width: 100%;
-      max-height: 65vh;
+      max-height: 60vh;
       object-fit: contain;
     }
 
     .lightbox-caption {
       padding: 1.2rem;
       background: var(--bg-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lightbox-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .lightbox-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
 
     .empty-state {
@@ -455,18 +559,23 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="#" class="brand-logo">
         <span id="logo-sub">मराठी</span> <span id="logo-main">कलाकृती</span>
       </a>
       <div class="nav-actions">
-        <!-- Language Switcher -->
+        <!-- Language Switch -->
         <button id="lang-toggle-btn" class="lang-btn" aria-label="Switch Language">
           🌐 <span id="lang-btn-text">English</span>
         </button>
-        <a href="#video-section" class="btn btn-outline" id="nav-video-btn">व्हिडिओ</a>
+        <a href="https://wa.me/918830021047?text=नमस्कार!%20मला%20तुमच्या%20ग्राफिक%20डिझाईन%20किंवा%20व्हिडिओ%20कामाबद्दल%20चौकशी%20करायची%20आहे." 
+           target="_blank" 
+           class="btn btn-whatsapp" 
+           style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">
+           WhatsApp
+        </a>
       </div>
     </div>
   </header>
@@ -476,10 +585,16 @@
     <div class="container hero-content">
       <span class="badge" id="hero-badge">ग्राफिक डिझायनर & व्हिडिओ एडिटर</span>
       <h1 id="hero-title">दर्जेदार मराठी ग्राफिक डिझाइन आणि व्हिडिओ एडिटिंग</h1>
-      <p id="hero-desc">निवडणूक बॅनर, सण-उत्सव पोस्टर्स, लग्नपत्रिका आणि व्यावसायिक शॉर्ट फिल्म्स व रील्स एडिटिंग.</p>
+      <p id="hero-desc">पारंपरिक लग्नपत्रिका, निवडणूक बॅनर, सण-उत्सव पोस्टर्स आणि 5-स्टार रेटेड सिनेमॅटिक शॉर्ट फिल्म्स व रील्स एडिटिंग.</p>
       <div class="hero-buttons">
         <a href="#gallery-section" class="btn btn-primary" id="hero-btn-design">डिझाइन्स पहा</a>
         <a href="#video-section" class="btn btn-outline" id="hero-btn-video">व्हिडिओ वर्क</a>
+        <a href="https://wa.me/918830021047?text=नमस्कार!%20मला%20नवीन%20प्रोजेक्टसाठी%20ऑर्डर%20द्यायची%20आहे." 
+           target="_blank" 
+           class="btn btn-whatsapp" 
+           id="hero-btn-wa">
+           थेट व्हॉट्सॲपवर संपर्क करा
+        </a>
       </div>
     </div>
   </section>
@@ -491,18 +606,18 @@
       <p id="gallery-desc">खालील श्रेणी निवडून डिझाईन्स पाहा:</p>
     </div>
 
-    <!-- Category Filters -->
+    <!-- Filter Buttons -->
     <div class="filter-wrapper" id="filter-wrapper">
-      <button class="filter-btn active" data-filter="all" data-i18n="cat-all">सर्व (All)</button>
-      <button class="filter-btn" data-filter="marathi-designs" data-i18n="cat-marathi">मराठी डिझाईन्स</button>
-      <button class="filter-btn" data-filter="political-posters" data-i18n="cat-political">राजकीय पोस्टर्स</button>
-      <button class="filter-btn" data-filter="festival-designs" data-i18n="cat-festival">सण व उत्सव</button>
-      <button class="filter-btn" data-filter="wedding-designs" data-i18n="cat-wedding">लग्नपत्रिका</button>
-      <button class="filter-btn" data-filter="social-media" data-i18n="cat-social">सोशल मीडिया</button>
-      <button class="filter-btn" data-filter="photo-manipulation" data-i18n="cat-manipulation">फोटो मॅनिप्युलेशन</button>
+      <button class="filter-btn active" data-filter="all">सर्व (All)</button>
+      <button class="filter-btn" data-filter="wedding-designs">लग्नपत्रिका</button>
+      <button class="filter-btn" data-filter="marathi-designs">मराठी डिझाईन्स</button>
+      <button class="filter-btn" data-filter="political-posters">राजकीय पोस्टर्स</button>
+      <button class="filter-btn" data-filter="festival-designs">सण व उत्सव</button>
+      <button class="filter-btn" data-filter="social-media">सोशल मीडिया</button>
+      <button class="filter-btn" data-filter="photo-manipulation">फोटो मॅनिप्युलेशन</button>
     </div>
 
-    <!-- Dynamic Image Grid -->
+    <!-- Images Grid -->
     <div class="gallery-grid" id="gallery-grid"></div>
 
     <div id="empty-state" class="empty-state hidden">
@@ -510,14 +625,14 @@
     </div>
   </section>
 
-  <!-- YouTube Video Editing Section -->
+  <!-- YouTube Video Editing Section (फक्त २ प्रमुख व्हिडिओ) -->
   <section id="video-section" class="section-wrap container" style="border-top: 1px solid var(--border);">
     <div class="section-title">
       <h2 id="video-title">व्हिडिओ एडिटिंग & शॉर्ट फिल्म्स</h2>
-      <p id="video-desc">YouTube व्हिडिओ, सिनेमॅटिक शॉर्ट फिल्म्स, प्रमोशनल रील्स आणि मोशन ग्राफिक कामे:</p>
+      <p id="video-desc">माझ्याद्वारे एडिट केलेली 5-स्टार रेटेड शॉर्ट फिल्म आणि व्हिडिओ वर्क:</p>
     </div>
 
-    <!-- Dynamic Video Grid -->
+    <!-- Videos Grid -->
     <div class="video-grid" id="video-grid"></div>
   </section>
 
@@ -530,27 +645,53 @@
         <img id="lightbox-img" src="" alt="Full Preview">
       </div>
       <div class="lightbox-caption">
-        <h3 id="lightbox-title"></h3>
-        <p id="lightbox-desc"></p>
+        <div class="lightbox-text">
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-desc"></p>
+        </div>
+        <a id="lightbox-wa-btn" href="#" target="_blank" class="btn btn-whatsapp" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+          ही डिझाईन हवी आहे? WhatsApp करा
+        </a>
       </div>
     </div>
   </div>
 
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/918830021047?text=नमस्कार!%20मी%20तुमचे%20पोर्टफोलिओ%20पाहिले%20आणि%20मला%20कामाबद्दल%20चर्चा%20करायची%20आहे." 
+     target="_blank" 
+     class="whatsapp-float" 
+     aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+      <path d="M12.031 2C6.496 2 2 6.502 2 12.046c0 1.954.553 3.784 1.516 5.344L2.094 22l4.773-1.423a9.986 9.986 0 0 0 5.164 1.469h.004c5.535 0 10.031-4.502 10.031-10.046 0-2.684-1.043-5.207-2.938-7.102C17.234 3.043 14.715 2 12.031 2zm5.834 14.473c-.244.688-1.42 1.32-1.957 1.402-.516.082-1.188.117-3.414-.808-2.684-1.117-4.41-3.844-4.543-4.023-.133-.18-1.082-1.441-1.082-2.75 0-1.309.684-1.953.926-2.219.242-.266.531-.332.707-.332.176 0 .352.004.508.012.164.008.383-.062.598.453.223.535.758 1.852.824 1.988.066.137.11.297.02.477-.09.18-.133.293-.266.45-.133.156-.277.348-.398.473-.133.137-.27.285-.117.551.152.266.68 1.121 1.457 1.816 1 .895 1.844 1.172 2.11 1.305.266.133.422.113.578-.066.156-.18.664-.773.844-1.043.18-.266.355-.223.598-.133.242.086 1.543.727 1.809.86.266.133.445.199.512.312.066.113.066.656-.176 1.344z"/>
+    </svg>
+    <span id="wa-float-text">WhatsApp वर बोला</span>
+  </a>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> <span id="footer-text">सर्व हक्क सुरक्षित | Marathi Graphic Design & Video Studio</span></p>
+      <p>&copy; <span id="year"></span> <span id="footer-text">सर्व हक्क सुरक्षित | मराठी ग्राफिक डिझाईन आणि व्हिडिओ स्टुडिओ (संपर्क: 8830021047)</span></p>
     </div>
   </footer>
 
   <!-- =========================================================
-       JAVASCRIPT DATA & FUNCTIONALITY
+       JAVASCRIPT
        ========================================================= -->
   <script>
     /* =========================================================
-       1. GRAPHIC DESIGN IMAGES LIST (इथे तुमचे फोटो जोडा)
+       १. ग्राफिक डिझाइन लिस्ट (यात तुमची Lagnapatrika फाईल जोडली आहे)
        ========================================================= */
     const myDesigns = [
+      {
+        id: "wed-01",
+        category: "wedding-designs",
+        // तुम्ही सांगितलेली फाईल इथे सेट केली आहे:
+        src: "assets/images/wedding-designs/Lagnapatrika_Design.webp",
+        title_mr: "शाही मराठमोळी लग्नपत्रिका डिझाईन",
+        title_en: "Royal Traditional Marathi Wedding Invitation",
+        desc_mr: "पारंपरिक मराठमोळे सुलेखन (Typography) आणि राजेशाही लुक असलेली खास लग्नपत्रिका डिझाईन.",
+        desc_en: "Exquisite Royal Maharashtrian wedding invitation card with custom traditional typography."
+      },
       {
         id: "md-01",
         category: "marathi-designs",
@@ -579,15 +720,6 @@
         desc_en: "High-impact political flex and digital banner layout."
       },
       {
-        id: "wed-01",
-        category: "wedding-designs",
-        src: "assets/images/wedding-designs/royal-wedding-card.webp",
-        title_mr: "शाही लग्नपत्रिका डिझाइन",
-        title_en: "Royal Marathi Wedding Invitation Card",
-        desc_mr: "पारंपरिक मराठमोळी सुलेखन असलेली डिजिटल निमंत्रण पत्रिका.",
-        desc_en: "Traditional royal Marathi calligraphy invitation card."
-      },
-      {
         id: "sm-01",
         category: "social-media",
         src: "assets/images/social-media/brand-post.webp",
@@ -608,94 +740,90 @@
     ];
 
     /* =========================================================
-       2. YOUTUBE VIDEO EDITING LIST (इथे तुमचे यूट्यूब लिंक जोडा)
-       You can paste normal links: https://www.youtube.com/watch?v=XXXX 
-       or Shorts link: https://youtube.com/shorts/XXXX 
-       or direct embed link!
+       २. फक्त दोनच YOUTUBE व्हिडिओ (तुमचा पहिला शॉर्ट फिल्म व्हिडिओ जोडला आहे)
        ========================================================= */
     const myVideos = [
       {
         id: "vid-01",
-        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", // Replace with your YouTube URL
-        tag_mr: "शॉर्ट फिल्म",
-        tag_en: "Short Film",
-        title_mr: "सिनेमॅटिक शॉर्ट फिल्म एडिटिंग व कलर ग्रेडिंग",
-        title_en: "Cinematic Short Film Editing & Color Grading",
-        desc_mr: "4K फुटेज, साऊंड डिझायनिंग आणि प्रीमियर प्रो वर एडिट केलेली शॉर्ट फिल्म.",
-        desc_en: "Edited on Premiere Pro with cinematic pacing and custom sound design."
+        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", // तुमची मूळ शॉर्ट फिल्म लिंक
+        rating: "★ 5.0 Public Rating",
+        tag_mr: "शॉर्ट फिल्म (Self-Edited)",
+        tag_en: "Short Film (Self-Edited)",
+        title_mr: "मराठी शॉर्ट फिल्म | सिनेमॅटिक एडिटिंग",
+        title_en: "Marathi Short Film | Cinematic Editing",
+        desc_mr: "माझ्याद्वारे स्वतः एडिट केलेली मराठी शॉर्ट फिल्म; ज्याला प्रेक्षकांकडून उत्कृष्ट प्रतिसाद आणि 5-स्टार रेटिंग मिळाली आहे.",
+        desc_en: "Self-edited Marathi short film, acclaimed by the audience with a 5-star rating for its pacing and story flow."
       },
       {
         id: "vid-02",
-        youtubeUrl: "https://youtu.be/T75zKMhFqpA", // Replace with your YouTube URL
-        tag_mr: "मोशन पोस्टर्स",
-        tag_en: "Motion Poster",
-        title_mr: "मराठी सण-उत्सव मोशन ग्राफिक्स पोस्टर",
-        title_en: "Marathi Festival Motion Graphics Animation",
-        desc_mr: "After Effects मध्ये तयार केलेले आकर्षक 2D/3D मोशन पोस्टर.",
-        desc_en: "Created using Adobe After Effects with lively character animation."
-      },
-      {
-        id: "vid-03",
-        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", // Replace with your YouTube URL
-        tag_mr: "रील्स / शॉर्ट्स",
-        tag_en: "Instagram Reel",
-        title_mr: "ट्रेंडिंग सोशल मीडिया रील्स एडिटिंग",
-        title_en: "Trending Viral Social Media Reel Editing",
-        desc_mr: "फास्ट ट्रान्झिशन्स आणि बीट सिंकसह व्यावसायिक ब्रँड रील्स.",
-        desc_en: "Fast-paced, beat-synced video editing for viral business branding."
+        // भविष्यात दुसरा व्हिडिओ असल्यास इथे URL बदला:
+        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", 
+        rating: "Featured Work",
+        tag_mr: "मोशन पोस्टर्स / रील्स",
+        tag_en: "Motion Poster / Reel",
+        title_mr: "सिनेमॅटिक मोशन ग्राफिक्स आणि रील्स एडिटिंग",
+        title_en: "Cinematic Motion Graphics & Video Editing",
+        desc_mr: "आधुनिक साऊंड इफेक्ट्स आणि कलर टोनिंगसह तयार केलेले प्रोफेशनल व्हिडिओ एडिटिंग काम.",
+        desc_en: "Professional creative video editing crafted with modern sound design and custom color grading."
       }
     ];
 
     /* =========================================================
-       3. LANGUAGE DICTIONARY (मराठी <-> English)
+       ३. भाषा ट्रान्सलेशन डिक्शनरी (मराठी <-> English)
        ========================================================= */
-    let currentLang = "mr"; // Default Marathi
+    let currentLang = "mr";
 
     const translations = {
       mr: {
         langBtn: "English",
-        navVideo: "व्हिडिओ काम",
         heroBadge: "ग्राफिक डिझायनर & व्हिडिओ एडिटर",
         heroTitle: "दर्जेदार मराठी ग्राफिक डिझाइन आणि व्हिडिओ एडिटिंग",
-        heroDesc: "निवडणूक बॅनर, सण-उत्सव पोस्टर्स, लग्नपत्रिका आणि व्यावसायिक शॉर्ट फिल्म्स व रील्स एडिटिंग.",
+        heroDesc: "पारंपरिक लग्नपत्रिका, निवडणूक बॅनर, सण-उत्सव पोस्टर्स आणि 5-स्टार रेटेड सिनेमॅटिक शॉर्ट फिल्म्स व रील्स एडिटिंग.",
         heroBtnDesign: "डिझाइन्स पहा",
-        heroBtnVideo: "व्हिडिओ पहा",
+        heroBtnVideo: "व्हिडिओ वर्क",
+        heroBtnWa: "थेट व्हॉट्सॲपवर संपर्क करा",
         galleryTitle: "ग्राफिक डिझाइन दालन",
         galleryDesc: "खालील श्रेणी निवडून डिझाईन्स पाहा:",
         emptyMsg: "या श्रेणीमध्ये सध्या डिझाइन्स उपलब्ध नाहीत.",
         videoTitle: "व्हिडिओ एडिटिंग & शॉर्ट फिल्म्स",
-        videoDesc: "YouTube व्हिडिओ, सिनेमॅटिक शॉर्ट फिल्म्स, प्रमोशनल रील्स आणि मोशन ग्राफिक कामे:",
-        footerText: "सर्व हक्क सुरक्षित | Marathi Graphic Design & Video Studio",
+        videoDesc: "माझ्याद्वारे एडिट केलेली 5-स्टार रेटेड शॉर्ट फिल्म आणि व्हिडिओ वर्क:",
+        waFloat: "WhatsApp वर बोला",
+        cardWa: "याबद्दल बोला",
+        lightboxWa: "ही डिझाईन हवी आहे? WhatsApp करा",
+        footerText: "सर्व हक्क सुरक्षित | मराठी ग्राफिक डिझाईन आणि व्हिडिओ स्टुडिओ (संपर्क: 8830021047)",
         categories: {
           "all": "सर्व (All)",
+          "wedding-designs": "लग्नपत्रिका",
           "marathi-designs": "मराठी डिझाईन्स",
           "political-posters": "राजकीय पोस्टर्स",
           "festival-designs": "सण व उत्सव",
-          "wedding-designs": "लग्नपत्रिका",
           "social-media": "सोशल मीडिया",
           "photo-manipulation": "फोटो मॅनिप्युलेशन"
         }
       },
       en: {
         langBtn: "मराठी",
-        navVideo: "Video Work",
         heroBadge: "Graphic Designer & Video Editor",
         heroTitle: "Premium Marathi Graphic Design & Video Editing",
-        heroDesc: "Specializing in Marathi typography, political banners, festive creatives, short films & viral social media editing.",
+        heroDesc: "Specializing in traditional wedding cards, political banners, festive posters & 5-star rated cinematic short films.",
         heroBtnDesign: "View Designs",
         heroBtnVideo: "View Videos",
+        heroBtnWa: "Chat Directly on WhatsApp",
         galleryTitle: "Graphic Design Gallery",
         galleryDesc: "Filter by design categories below:",
         emptyMsg: "No designs currently found in this category.",
         videoTitle: "Video Editing & Short Films",
-        videoDesc: "YouTube video projects, cinematic short films, Instagram reels, and motion designs:",
-        footerText: "All Rights Reserved | Marathi Graphic Design & Video Studio",
+        videoDesc: "5-Star rated self-edited short film and video editing work:",
+        waFloat: "Chat on WhatsApp",
+        cardWa: "Enquire Now",
+        lightboxWa: "Interested in this design? WhatsApp me",
+        footerText: "All Rights Reserved | Marathi Graphic Design & Video Studio (Contact: 8830021047)",
         categories: {
           "all": "All Designs",
+          "wedding-designs": "Wedding Cards",
           "marathi-designs": "Marathi Designs",
           "political-posters": "Political Posters",
           "festival-designs": "Festival Designs",
-          "wedding-designs": "Wedding Cards",
           "social-media": "Social Media",
           "photo-manipulation": "Photo Manipulation"
         }
@@ -716,15 +844,15 @@
       } else if (url.includes("youtube.com/embed/")) {
         return url;
       } else {
-        videoId = url; // assume direct ID entered
+        videoId = url;
       }
       return `https://www.youtube-nocookie.com/embed/${videoId}`;
     }
 
-    // Dynamic fallback preview card
+    // Fallback card if image not found
     const createFallbackImage = (text) => {
       const encodedText = encodeURIComponent(text || "Design Preview");
-      return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750"><rect fill="%231a1e27" width="600" height="750"/><text fill="%23ff5e14" font-family="sans-serif" font-size="22" font-weight="bold" x="50%" y="48%" text-anchor="middle">${encodedText}</text><text fill="%236c757d" font-family="sans-serif" font-size="15" x="50%" y="54%" text-anchor="middle">Click for Details</text></svg>`;
+      return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750"><rect fill="%231a1e27" width="600" height="750"/><text fill="%23ff5e14" font-family="sans-serif" font-size="22" font-weight="bold" x="50%" y="48%" text-anchor="middle">${encodedText}</text><text fill="%236c757d" font-family="sans-serif" font-size="15" x="50%" y="54%" text-anchor="middle">Click to Inquire on WhatsApp</text></svg>`;
     };
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -735,11 +863,9 @@
       const langToggleBtn = document.getElementById("lang-toggle-btn");
 
       let activeFilter = "all";
-
-      // Set Year
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Render Graphic Designs Grid
+      // Render Graphic Designs
       function renderGallery() {
         galleryGrid.innerHTML = "";
         const list = activeFilter === "all" 
@@ -784,7 +910,7 @@
         });
       }
 
-      // Render Video Grid
+      // Render Videos (फक्त २ प्रमुख व्हिडिओ)
       function renderVideos() {
         videoGrid.innerHTML = "";
         myVideos.forEach(vid => {
@@ -792,6 +918,7 @@
           const title = currentLang === "mr" ? vid.title_mr : vid.title_en;
           const tag = currentLang === "mr" ? vid.tag_mr : vid.tag_en;
           const desc = currentLang === "mr" ? vid.desc_mr : vid.desc_en;
+          const waMsg = encodeURIComponent(`नमस्कार! मला तुमच्या '${title}' या व्हिडिओ एडिटिंग कामाबद्दल माहिती हवी आहे.`);
 
           const videoCard = document.createElement("div");
           videoCard.className = "video-card";
@@ -806,35 +933,43 @@
               </iframe>
             </div>
             <div class="video-info">
-              <span class="video-tag">${tag}</span>
-              <h3>${title}</h3>
-              <p>${desc}</p>
+              <div>
+                <div class="video-header-tags">
+                  <span class="video-tag">${tag}</span>
+                  <span class="rating-badge">${vid.rating}</span>
+                </div>
+                <h3>${title}</h3>
+                <p>${desc}</p>
+              </div>
+              <a href="https://wa.me/918830021047?text=${waMsg}" target="_blank" class="card-contact-btn">
+                💬 ${translations[currentLang].cardWa}
+              </a>
             </div>
           `;
           videoGrid.appendChild(videoCard);
         });
       }
 
-      // Update All Texts on Language Change
+      // Update Language
       function updateLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
 
         document.getElementById("lang-btn-text").textContent = t.langBtn;
-        document.getElementById("nav-video-btn").textContent = t.navVideo;
         document.getElementById("hero-badge").textContent = t.heroBadge;
         document.getElementById("hero-title").textContent = t.heroTitle;
         document.getElementById("hero-desc").textContent = t.heroDesc;
         document.getElementById("hero-btn-design").textContent = t.heroBtnDesign;
         document.getElementById("hero-btn-video").textContent = t.heroBtnVideo;
+        document.getElementById("hero-btn-wa").textContent = t.heroBtnWa;
         document.getElementById("gallery-title").textContent = t.galleryTitle;
         document.getElementById("gallery-desc").textContent = t.galleryDesc;
         document.getElementById("empty-msg").textContent = t.emptyMsg;
         document.getElementById("video-title").textContent = t.videoTitle;
         document.getElementById("video-desc").textContent = t.videoDesc;
+        document.getElementById("wa-float-text").textContent = t.waFloat;
         document.getElementById("footer-text").textContent = t.footerText;
 
-        // Update category button labels
         filterBtns.forEach(btn => {
           const filterKey = btn.getAttribute("data-filter");
           if (t.categories[filterKey]) {
@@ -842,18 +977,16 @@
           }
         });
 
-        // Re-render contents
         renderGallery();
         renderVideos();
       }
 
-      // Toggle Language Button Click
       langToggleBtn.addEventListener("click", () => {
         const nextLang = currentLang === "mr" ? "en" : "mr";
         updateLanguage(nextLang);
       });
 
-      // Filter Clicks
+      // Filter clicks
       filterBtns.forEach(btn => {
         btn.addEventListener("click", () => {
           filterBtns.forEach(b => b.classList.remove("active"));
@@ -863,11 +996,12 @@
         });
       });
 
-      // Lightbox Handlers
+      // Lightbox Functions
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
       const lightboxTitle = document.getElementById("lightbox-title");
       const lightboxDesc = document.getElementById("lightbox-desc");
+      const lightboxWaBtn = document.getElementById("lightbox-wa-btn");
       const lightboxClose = document.getElementById("lightbox-close");
       const lightboxOverlay = document.getElementById("lightbox-overlay");
 
@@ -876,6 +1010,11 @@
         lightboxImg.onerror = () => { lightboxImg.src = createFallbackImage(title); };
         lightboxTitle.textContent = title;
         lightboxDesc.textContent = desc;
+
+        const waText = encodeURIComponent(`नमस्कार! मला तुमच्या '${title}' या डिझाइनबद्दल ऑर्डर द्यायची आहे.`);
+        lightboxWaBtn.href = `https://wa.me/918830021047?text=${waText}`;
+        lightboxWaBtn.textContent = translations[currentLang].lightboxWa;
+
         lightbox.classList.add("active");
         lightbox.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
@@ -896,7 +1035,7 @@
         }
       });
 
-      // Initial Setup
+      // सुरुवातीला मराठी भाषेत लोड करा
       updateLanguage("mr");
     });
   </script>
