@@ -6,15 +6,12 @@
   <meta name="description" content="मराठी ग्राफिक डिझायनर आणि व्हिडिओ एडिटर पोर्टफोलिओ">
   <title>मराठी ग्राफिक डिझायनर & व्हिडिओ एडिटर | Portfolio</title>
 
-  <!-- Google Fonts: Poppins & Yantramanav -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Yantramanav:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       CSS STYLING (Dark Premium Theme + Mobile Optimized)
-       ========================================================= */
     :root {
       --bg-dark: #0d0f14;
       --bg-card: #161922;
@@ -27,69 +24,31 @@
       --font-stack: 'Poppins', 'Yantramanav', sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-stack);
-      background-color: var(--bg-dark);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-stack); background-color: var(--bg-dark); color: var(--text); line-height: 1.6; }
+    .container { width: 90%; max-width: 1280px; margin: 0 auto; }
 
     /* Header */
     .site-header {
-      background: rgba(13, 15, 20, 0.9);
+      background: rgba(13, 15, 20, 0.92);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
+      padding: 0.9rem 0;
     }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .brand-logo { font-size: 1.35rem; font-weight: 800; text-decoration: none; color: var(--text); }
+    .brand-logo span { color: var(--primary); }
+    .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
 
-    .nav-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .brand-logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .brand-logo span {
-      color: var(--primary);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .lang-btn {
+    .lang-btn, .admin-trigger-btn {
       background: #202531;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 0.45rem 0.9rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 6px;
       font-size: 0.85rem;
       font-weight: 700;
@@ -97,21 +56,16 @@
       transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
+    .lang-btn:hover, .admin-trigger-btn:hover { border-color: var(--primary); color: var(--primary); }
 
-    .lang-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    /* Hero Section */
+    /* Hero */
     .hero-section {
       text-align: center;
       padding: 4.5rem 1rem 3.5rem;
       background: radial-gradient(circle at center top, rgba(255, 94, 20, 0.12) 0%, transparent 65%);
     }
-
     .badge {
       display: inline-block;
       background: rgba(255, 94, 20, 0.15);
@@ -123,27 +77,9 @@
       border: 1px solid rgba(255, 94, 20, 0.3);
       margin-bottom: 1rem;
     }
-
-    .hero-content h1 {
-      font-size: clamp(1.9rem, 4.8vw, 3.2rem);
-      font-weight: 900;
-      margin-bottom: 0.8rem;
-      color: #fff;
-    }
-
-    .hero-content p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 680px;
-      margin: 0 auto 1.8rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .hero-content h1 { font-size: clamp(1.9rem, 4.8vw, 3.2rem); font-weight: 900; margin-bottom: 0.8rem; color: #fff; }
+    .hero-content p { color: var(--text-muted); font-size: 1.1rem; max-width: 680px; margin: 0 auto 1.8rem; }
+    .hero-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex;
@@ -155,71 +91,24 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
       border: none;
+      font-family: inherit;
     }
-
-    .btn-primary:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .btn-whatsapp {
-      background: #1ebe5d;
-      color: #fff;
-      border: 1px solid #2ecc71;
-    }
-
-    .btn-whatsapp:hover {
-      background: #179e4d;
-      color: #fff;
-      transform: translateY(-2px);
-    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+    .btn-whatsapp { background: #1ebe5d; color: #fff; border: 1px solid #2ecc71; }
+    .btn-whatsapp:hover { background: #179e4d; color: #fff; transform: translateY(-2px); }
 
     /* Sections */
-    .section-wrap {
-      padding: 3.5rem 0;
-    }
+    .section-wrap { padding: 3.5rem 0; }
+    .section-title { text-align: center; margin-bottom: 2.2rem; }
+    .section-title h2 { font-size: 2rem; margin-bottom: 0.4rem; font-weight: 800; }
+    .section-title p { color: var(--text-muted); }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 2.2rem;
-    }
-
-    .section-title h2 {
-      font-size: 2rem;
-      margin-bottom: 0.4rem;
-      font-weight: 800;
-    }
-
-    .section-title p {
-      color: var(--text-muted);
-    }
-
-    /* Category Filters */
-    .filter-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-bottom: 2.2rem;
-    }
-
+    /* Filters */
+    .filter-wrapper { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.2rem; }
     .filter-btn {
       background: var(--bg-card);
       color: var(--text-muted);
@@ -232,372 +121,89 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
+    .filter-btn:hover, .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    /* Gallery Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
+    /* Grids */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
     .gallery-card {
       background: var(--bg-card);
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border);
       cursor: pointer;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--primary);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .card-img-wrap {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      position: relative;
-      background-color: #11141a;
-      overflow: hidden;
-    }
-
-    .card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-card:hover .card-img-wrap img {
-      transform: scale(1.05);
-    }
-
-    .card-info {
-      padding: 1.1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-
-    .card-info h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .category-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: var(--primary);
-      letter-spacing: 0.5px;
-      font-weight: 700;
-    }
-
-    /* Video Section */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 1.8rem;
-    }
-
-    @media (max-width: 480px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .video-card {
-      background: var(--bg-card);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
       transition: transform 0.3s ease, border-color 0.3s ease;
       display: flex;
       flex-direction: column;
-    }
-
-    .video-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-    }
-
-    .video-wrapper {
       position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background-color: #000;
     }
+    .gallery-card:hover { transform: translateY(-6px); border-color: var(--primary); }
+    .card-img-wrap { width: 100%; aspect-ratio: 4 / 5; position: relative; background-color: #11141a; overflow: hidden; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .gallery-card:hover .card-img-wrap img { transform: scale(1.05); }
+    .card-info { padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
+    .card-info h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .category-tag { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 700; }
 
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    /* Video Grid */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.8rem; }
+    @media (max-width: 480px) { .video-grid { grid-template-columns: 1fr; } }
+    .video-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; position: relative; }
+    .video-wrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; background-color: #000; }
+    .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .video-info { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+    .video-header-tags { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .video-tag { font-size: 0.75rem; text-transform: uppercase; color: #ff334b; font-weight: 700; }
+    .rating-badge { font-size: 0.8rem; color: #ffd700; font-weight: 700; background: rgba(255, 215, 0, 0.12); padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(255, 215, 0, 0.3); }
 
-    .video-info {
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
+    /* Lightbox */
+    .lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 1000; padding: 1.5rem; }
+    .lightbox.active { display: flex; }
+    .lightbox-overlay { position: absolute; inset: 0; background: rgba(6, 8, 12, 0.94); backdrop-filter: blur(10px); }
+    .lightbox-content { position: relative; max-width: 950px; width: 100%; max-height: 92vh; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; z-index: 10; overflow: hidden; display: flex; flex-direction: column; }
+    .lightbox-close { position: absolute; top: 10px; right: 15px; background: rgba(0, 0, 0, 0.7); border: none; color: #fff; font-size: 2rem; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; z-index: 20; }
+    .lightbox-media { flex: 1; background: #090b0e; display: flex; align-items: center; justify-content: center; max-height: 65vh; cursor: zoom-in; overflow: hidden; }
+    .lightbox-media img { max-width: 100%; max-height: 65vh; object-fit: contain; }
+    .lightbox-media img:fullscreen { background-color: #0d0f14; object-fit: contain; }
+    .lightbox-caption { padding: 1.1rem 1.4rem; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; flex-wrap: wrap; border-top: 1px solid var(--border); }
+    .btn-fullscreen { background: #202531; color: var(--text); border: 1px solid var(--border); padding: 0.55rem 1.1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.55rem; }
+    .btn-fullscreen:hover { background: var(--primary); color: #fff; }
 
-    .video-header-tags {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.4rem;
-    }
-
-    .video-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: #ff334b;
-      font-weight: 700;
-    }
-
-    .rating-badge {
-      font-size: 0.8rem;
-      color: #ffd700;
-      font-weight: 700;
-      background: rgba(255, 215, 0, 0.12);
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-    }
-
-    .video-info h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .video-info p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .card-contact-btn {
-      align-self: flex-start;
-      font-size: 0.85rem;
-      padding: 0.45rem 0.95rem;
-      border-radius: 6px;
-      background: rgba(37, 211, 102, 0.15);
-      color: var(--whatsapp);
-      border: 1px solid rgba(37, 211, 102, 0.3);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .card-contact-btn:hover {
-      background: var(--whatsapp);
-      color: #000;
-    }
-
-    /* Floating WhatsApp Button */
+    /* WhatsApp Float */
     .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: var(--whatsapp);
-      color: #fff;
-      border-radius: 50px;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      z-index: 999;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: fixed; bottom: 25px; right: 25px; background-color: var(--whatsapp); color: #fff; border-radius: 50px; padding: 12px 20px;
+      display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45); text-decoration: none; font-weight: 700; font-size: 0.95rem; z-index: 999;
     }
+    .whatsapp-icon { width: 24px; height: 24px; fill: currentColor; }
 
-    .whatsapp-float:hover {
-      transform: scale(1.06);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-      color: #fff;
+    /* =========================================================
+       ADMIN MODIFICATION PANEL STYLES
+       ========================================================= */
+    .admin-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 2000; padding: 1.5rem; }
+    .admin-modal.active { display: flex; }
+    .admin-modal-overlay { position: absolute; inset: 0; background: rgba(5, 7, 10, 0.95); backdrop-filter: blur(8px); }
+    .admin-panel-card {
+      position: relative; max-width: 650px; width: 100%; max-height: 90vh; overflow-y: auto; background: #141720; border: 1px solid var(--primary);
+      border-radius: 12px; z-index: 10; padding: 2rem; box-shadow: 0 10px 40px rgba(255, 94, 20, 0.2);
     }
+    .admin-close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; background: none; border: none; color: #fff; cursor: pointer; }
+    .admin-tabs { display: flex; gap: 0.6rem; margin: 1.5rem 0 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; }
+    .admin-tab-btn { background: none; border: none; color: var(--text-muted); font-size: 1rem; font-weight: 700; cursor: pointer; padding: 0.4rem 0.8rem; }
+    .admin-tab-btn.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; color: #fff; }
+    .form-control {
+      width: 100%; padding: 0.75rem 1rem; background: #0c0e14; border: 1px solid var(--border); border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.95rem;
+    }
+    .form-control:focus { outline: none; border-color: var(--primary); }
+    .del-btn {
+      position: absolute; top: 10px; right: 10px; background: rgba(220, 38, 38, 0.85); color: #fff; border: none; border-radius: 6px;
+      padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; font-weight: 700; z-index: 10;
+    }
+    .del-btn:hover { background: #dc2626; }
 
-    .whatsapp-icon {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    /* Lightbox Modal */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 1.5rem;
-    }
-
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(6, 8, 12, 0.94);
-      backdrop-filter: blur(10px);
-    }
-
-    .lightbox-content {
-      position: relative;
-      max-width: 950px;
-      width: 100%;
-      max-height: 92vh;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      z-index: 10;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: rgba(0, 0, 0, 0.7);
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      line-height: 1;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      z-index: 20;
-      transition: all 0.2s ease;
-    }
-
-    .lightbox-close:hover {
-      background: var(--primary);
-    }
-
-    .lightbox-media {
-      flex: 1;
-      background: #090b0e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-height: 65vh;
-      cursor: zoom-in;
-      overflow: hidden;
-    }
-
-    .lightbox-media img {
-      max-width: 100%;
-      max-height: 65vh;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-
-    .lightbox-media img:fullscreen {
-      background-color: #0d0f14;
-      object-fit: contain;
-    }
-
-    .lightbox-caption {
-      padding: 1.1rem 1.4rem;
-      background: var(--bg-card);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--border);
-    }
-
-    .lightbox-text {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .lightbox-text h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .lightbox-text p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    /* New Fullscreen Button (Replaces WhatsApp) */
-    .btn-fullscreen {
-      background: #202531;
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 0.55rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      transition: all 0.25s ease;
-    }
-
-    .btn-fullscreen:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .btn-fullscreen svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--text-muted);
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    /* Footer */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
+    .empty-state { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+    .hidden { display: none !important; }
+    .site-footer { border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -609,16 +215,14 @@
         <span id="logo-sub">मराठी</span> <span id="logo-main">कलाकृती</span>
       </a>
       <div class="nav-actions">
+        <!-- Modification / Admin Trigger -->
+        <button id="admin-login-btn" class="admin-trigger-btn" title="वेबसाईट एडिट करा">
+          ⚙️ <span id="admin-btn-text">वेबसाईट मॉडिफाय करा</span>
+        </button>
         <!-- Language Switch -->
         <button id="lang-toggle-btn" class="lang-btn" aria-label="Switch Language">
           🌐 <span id="lang-btn-text">English</span>
         </button>
-        <a href="https://wa.me/918830021047?text=नमस्कार!%20मला%20तुमच्या%20ग्राफिक%20डिझाईन%20किंवा%20व्हिडिओ%20कामाबद्दल%20चौकशी%20करायची%20आहे." 
-           target="_blank" 
-           class="btn btn-whatsapp" 
-           style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">
-           WhatsApp
-        </a>
       </div>
     </div>
   </header>
@@ -632,17 +236,14 @@
       <div class="hero-buttons">
         <a href="#gallery-section" class="btn btn-primary" id="hero-btn-design">डिझाइन्स पहा</a>
         <a href="#video-section" class="btn btn-outline" id="hero-btn-video">व्हिडिओ वर्क</a>
-        <a href="https://wa.me/918830021047?text=नमस्कार!%20मला%20नवीन%20प्रोजेक्टसाठी%20ऑर्डर%20द्यायची%20आहे." 
-           target="_blank" 
-           class="btn btn-whatsapp" 
-           id="hero-btn-wa">
-           थेट व्हॉट्सॲपवर संपर्क करा
+        <a href="https://wa.me/918830021047?text=नमस्कार!%20मला%20नवीन%20प्रोजेक्टसाठी%20ऑर्डर%20द्यायची%20आहे." target="_blank" class="btn btn-whatsapp" id="hero-btn-wa">
+          थेट व्हॉट्सॲपवर संपर्क करा
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Image Gallery Section -->
+  <!-- Graphic Designs Section -->
   <section id="gallery-section" class="section-wrap container">
     <div class="section-title">
       <h2 id="gallery-title">ग्राफिक डिझाइन दालन</h2>
@@ -660,7 +261,7 @@
       <button class="filter-btn" data-filter="photo-manipulation">फोटो मॅनिप्युलेशन</button>
     </div>
 
-    <!-- Dynamic Images Grid -->
+    <!-- Dynamic Gallery Grid -->
     <div class="gallery-grid" id="gallery-grid"></div>
 
     <div id="empty-state" class="empty-state hidden">
@@ -675,27 +276,24 @@
       <p id="video-desc">माझ्याद्वारे एडिट केलेली 5-स्टार रेटेड शॉर्ट फिल्म आणि व्हिडिओ वर्क:</p>
     </div>
 
-    <!-- Videos Grid -->
     <div class="video-grid" id="video-grid"></div>
   </section>
 
-  <!-- Lightbox Modal (आता WhatsApp शिवाय - फक्त फुल स्क्रीन व्ह्यू बटणासह) -->
+  <!-- Lightbox Modal (Full Screen View Included) -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <div class="lightbox-overlay" id="lightbox-overlay"></div>
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightbox-close" title="बंद करा">&times;</button>
       <div class="lightbox-media" id="lightbox-media" title="क्लिक करून फुल स्क्रीन करा">
-        <img id="lightbox-img" src="" alt="Full Preview">
+        <img id="lightbox-img" src="" alt="Preview">
       </div>
       <div class="lightbox-caption">
         <div class="lightbox-text">
           <h3 id="lightbox-title"></h3>
           <p id="lightbox-desc"></p>
         </div>
-        
-        <!-- Full Screen View Button -->
         <button id="lightbox-fullscreen-btn" class="btn-fullscreen" title="फुल स्क्रीन पहा">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
           </svg>
           <span id="fs-btn-label">फुल स्क्रीन व्ह्यू</span>
@@ -704,7 +302,102 @@
     </div>
   </div>
 
-  <!-- Floating WhatsApp Action Button (फक्त स्क्रीनच्या कोपऱ्यात राहील) -->
+  <!-- =========================================================
+       MODIFICATION / ADMIN DASHBOARD MODAL
+       ========================================================= -->
+  <div id="admin-modal" class="admin-modal" aria-hidden="true">
+    <div class="admin-modal-overlay" id="admin-modal-overlay"></div>
+    <div class="admin-panel-card">
+      <button class="admin-close-btn" id="admin-close-btn">&times;</button>
+      
+      <!-- Screen 1: Password Lock Screen -->
+      <div id="admin-lock-screen">
+        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">🔒 वेबसाईट मॉडिफाय करा (Admin Panel)</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">बदल करण्यासाठी कृपया तुमचा पासवर्ड टाका:</p>
+        <div class="form-group">
+          <input type="password" id="admin-password-input" class="form-control" placeholder="पासवर्ड टाका..." autocomplete="current-password">
+        </div>
+        <button id="admin-login-submit" class="btn btn-primary" style="width: 100%;">लॉगिन करा</button>
+        <p id="admin-error-msg" style="color: #ff334b; font-size: 0.85rem; margin-top: 0.8rem; display: none;">❌ चुकीचा पासवर्ड! कृपया पुन्हा प्रयत्न करा.</p>
+      </div>
+
+      <!-- Screen 2: Admin Dashboard (Password unlocked) -->
+      <div id="admin-dashboard-screen" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--primary);">⚙️ मॉडिफिकेशन डॅशबोर्ड</h3>
+          <button id="admin-logout-btn" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">लॉगआउट</button>
+        </div>
+
+        <div class="admin-tabs">
+          <button class="admin-tab-btn active" id="tab-design-btn">➕ नवीन डिझाईन जोडा</button>
+          <button class="admin-tab-btn" id="tab-video-btn">🎥 नवीन YouTube व्हिडिओ जोडा</button>
+        </div>
+
+        <!-- Form 1: Add Image / Design -->
+        <form id="add-design-form">
+          <div class="form-group">
+            <label>१. फोटो निवडा (Select Design Image):</label>
+            <input type="file" id="design-file-input" class="form-control" accept="image/webp, image/jpeg, image/png" required>
+          </div>
+          <div class="form-group">
+            <label>२. डिझाईनचे नाव (शीर्षक - Marathi):</label>
+            <input type="text" id="design-title-mr" class="form-control" placeholder="उदा. सण उत्सव विशेष बॅनर" required>
+          </div>
+          <div class="form-group">
+            <label>३. Design Title (English):</label>
+            <input type="text" id="design-title-en" class="form-control" placeholder="e.g. Festive Banner Creative" required>
+          </div>
+          <div class="form-group">
+            <label>४. श्रेणी (Category):</label>
+            <select id="design-category-input" class="form-control">
+              <option value="wedding-designs">लग्नपत्रिका (Wedding Cards)</option>
+              <option value="marathi-designs">मराठी डिझाईन्स (Marathi Designs)</option>
+              <option value="political-posters">राजकीय पोस्टर्स (Political Posters)</option>
+              <option value="festival-designs">सण व उत्सव (Festival Designs)</option>
+              <option value="social-media">सोशल मीडिया (Social Media)</option>
+              <option value="photo-manipulation">फोटो मॅनिप्युलेशन (Photo Manipulation)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>५. माहिती / Description:</label>
+            <textarea id="design-desc-mr" class="form-control" rows="2" placeholder="डिझाईनबद्दल थोडी माहिती..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">डिझाईन लगेच सेव्ह करा</button>
+        </form>
+
+        <!-- Form 2: Add YouTube Video -->
+        <form id="add-video-form" style="display: none;">
+          <div class="form-group">
+            <label>१. YouTube Video URL (किंवा Link):</label>
+            <input type="url" id="video-url-input" class="form-control" placeholder="https://www.youtube.com/watch?v=..." required>
+          </div>
+          <div class="form-group">
+            <label>२. व्हिडिओचे नाव (Marathi Title):</label>
+            <input type="text" id="video-title-mr" class="form-control" placeholder="उदा. नवीन मराठी शॉर्ट फिल्म एडिटिंग" required>
+          </div>
+          <div class="form-group">
+            <label>३. Video Title (English):</label>
+            <input type="text" id="video-title-en" class="form-control" placeholder="e.g. Marathi Short Film Editing" required>
+          </div>
+          <div class="form-group">
+            <label>४. टॅग / प्रकार (उदा. शॉर्ट फिल्म, मोशन पोस्टर):</label>
+            <input type="text" id="video-tag-input" class="form-control" placeholder="उदा. शॉर्ट फिल्म / मोशन पोस्टर" required>
+          </div>
+          <div class="form-group">
+            <label>५. रेटिंग किंवा विशेष माहिती:</label>
+            <input type="text" id="video-rating-input" class="form-control" placeholder="उदा. ★ 5.0 Public Rating" value="★ 5.0 Public Rating">
+          </div>
+          <div class="form-group">
+            <label>६. सविस्तर माहिती (Description):</label>
+            <textarea id="video-desc-mr" class="form-control" rows="2" placeholder="व्हिडिओ एडिटिंगबद्दल माहिती..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">व्हिडिओ लगेच सेव्ह करा</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
   <a href="https://wa.me/918830021047?text=नमस्कार!%20मी%20तुमचे%20पोर्टफोलिओ%20पाहिले%20आणि%20मला%20कामाबद्दल%20चर्चा%20करायची%20आहे." 
      target="_blank" 
      class="whatsapp-float" 
@@ -723,115 +416,52 @@
   </footer>
 
   <!-- =========================================================
-       JAVASCRIPT
+       JAVASCRIPT ARCHITECTURE
        ========================================================= -->
   <script>
-    /* =========================================================
-       १. ग्राफिक डिझाइन लिस्ट
-       ========================================================= */
-    const myDesigns = [
+    // १. सुरुवातीचा डेटा (फक्त तुमची लग्नपत्रिका डिझाईन)
+    const defaultDesigns = [
       {
-        id: "wed-01",
+        id: "design_initial_01",
         category: "wedding-designs",
-        src: "%22assets/images/wedding-designs/Lagnapatrika_Design.webp",
+        src: "assets/images/wedding-designs/Lagnapatrika_Design.webp",
         fallbackPaths: [
-          '"assets/images/wedding-designs/Lagnapatrika_Design.webp',
-          'assets/images/wedding-designs/Lagnapatrika_Design.webp',
-          'Lagnapatrika_Design.webp'
+          "%22assets/images/wedding-designs/Lagnapatrika_Design.webp",
+          '"assets/images/wedding-designs/Lagnapatrika_Design.webp'
         ],
         title_mr: "शाही मराठमोळी लग्नपत्रिका डिझाईन",
         title_en: "Royal Traditional Marathi Wedding Invitation",
         desc_mr: "पारंपरिक मराठमोळे सुलेखन (Typography) आणि राजेशाही लुक असलेली खास लग्नपत्रिका डिझाईन.",
         desc_en: "Exquisite Royal Maharashtrian wedding invitation card with custom traditional typography."
-      },
-      {
-        id: "md-01",
-        category: "marathi-designs",
-        src: "%22assets/images/marathi-designs/shivaji-maharaj-poster.webp",
-        fallbackPaths: ['assets/images/marathi-designs/shivaji-maharaj-poster.webp'],
-        title_mr: "भावपूर्ण श्रद्धांजली पोस्टर",
-        title_en: "Heartfelt tribute poster",
-        desc_mr: "नाना पाटेकर यांना भावपूर्ण श्रद्धांजली डिझाईन.",
-        desc_en: "A heartfelt tribute design for Nana Patekar."
-      },
-      {
-        id: "fest-01",
-        category: "festival-designs",
-        src: "%22assets/images/festival-designs/ganeshotsav-creative.webp",
-        fallbackPaths: ['assets/images/festival-designs/ganeshotsav-creative.webp'],
-        title_mr: "गणेशोत्सव आगमन विशेष बॅनर",
-        title_en: "Ganeshotsav Arrival Special Banner",
-        desc_mr: "गणेशोत्सवासाठी खास तयार केलेले सोशल मीडिया डिझाईन.",
-        desc_en: "Festive social media banner designed for Ganesh Chaturthi."
-      },
-      {
-        id: "pol-01",
-        category: "political-posters",
-        src: "%22assets/images/political-posters/election-campaign.webp",
-        fallbackPaths: ['assets/images/political-posters/election-campaign.webp'],
-        title_mr: "निवडणूक प्रचार अधिकृत बॅनर",
-        title_en: "Election Campaign Official Poster",
-        desc_mr: "स्थानिक स्वराज्य संस्था व विधानसभा प्रचार पोस्टर लेआउट.",
-        desc_en: "High-impact political flex and digital banner layout."
-      },
-      {
-        id: "sm-01",
-        category: "social-media",
-        src: "%22assets/images/social-media/brand-post.webp",
-        fallbackPaths: ['assets/images/social-media/brand-post.webp'],
-        title_mr: "व्यवसाय ब्रँडिंग सोशल मीडिया पोस्ट",
-        title_en: "Brand Advertising Social Media Creative",
-        desc_mr: "हॉटेल व फूड बिझनेससाठी डिझाइन केलेले इंस्टाग्राम क्रिएटिव्ह.",
-        desc_en: "Instagram branding post creative for local businesses."
-      },
-      {
-        id: "pm-01",
-        category: "photo-manipulation",
-        src: "%22assets/images/photo-manipulation/warrior-concept.webp",
-        fallbackPaths: ['assets/images/photo-manipulation/warrior-concept.webp'],
-        title_mr: "ऐतिहासिक संकल्पना फोटो मॅनिप्युलेशन",
-        title_en: "Historical Concept Photo Manipulation",
-        desc_mr: "मल्टीपल इमेजेस आणि सिनेमॅटिक लायटिंगचे डिजिटल आर्टवर्क.",
-        desc_en: "Advanced multi-image blending and cinematic lighting art."
       }
     ];
 
-    /* =========================================================
-       २. यूट्यूब व्हिडिओ लिस्ट
-       ========================================================= */
-    const myVideos = [
+    // २. सुरुवातीचा व्हिडिओ (तुमची ५-स्टार रेटेड शॉर्ट फिल्म)
+    const defaultVideos = [
       {
-        id: "vid-01",
+        id: "video_initial_01",
         youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM",
         rating: "★ 5.0 Public Rating",
         tag_mr: "शॉर्ट फिल्म (Self-Edited)",
         tag_en: "Short Film (Self-Edited)",
         title_mr: "मराठी शॉर्ट फिल्म | सिनेमॅटिक एडिटिंग",
         title_en: "Marathi Short Film | Cinematic Editing",
-        desc_mr: "माझ्याद्वारे स्वतः एडिट केलेली मराठी शॉर्ट फिल्म; ज्याला प्रेक्षकांकडून उत्कृष्ट प्रतिसाद आणि 5-स्टार रेटिंग मिळाली आहे.",
-        desc_en: "Self-edited Marathi short film, acclaimed by the audience with a 5-star rating for its pacing and storytelling."
-      },
-      {
-        id: "vid-02",
-        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", 
-        rating: "Featured Work",
-        tag_mr: "मोशन पोस्टर्स / रील्स",
-        tag_en: "Motion Poster / Reel",
-        title_mr: "सिनेमॅटिक मोशन ग्राफिक्स आणि रील्स एडिटिंग",
-        title_en: "Cinematic Motion Graphics & Video Editing",
-        desc_mr: "आधुनिक साऊंड इफेक्ट्स आणि कलर टोनिंगसह तयार केलेले व्यावसायिक व्हिडिओ एडिटिंग काम.",
-        desc_en: "Professional creative video editing crafted with modern sound design and custom color grading."
+        desc_mr: "माझ्याद्वारे स्वतः एडिट केलेली मराठी शॉर्ट फिल्म; ज्याला प्रेक्षकांकडून 5-स्टार रेटिंग मिळालेली आहे.",
+        desc_en: "Self-edited Marathi short film acclaimed with 5-star public rating."
       }
     ];
 
-    /* =========================================================
-       ३. भाषा ट्रान्सलेशन
-       ========================================================= */
+    // Local Storage मधून डेटा लोड करणे (तुम्ही वेबसाईटवरून जोडलेले नवीन फोटो कायम सेव्ह राहतील)
+    let myDesigns = JSON.parse(localStorage.getItem("rushi_portfolio_designs")) || defaultDesigns;
+    let myVideos = JSON.parse(localStorage.getItem("rushi_portfolio_videos")) || defaultVideos;
+
     let currentLang = "mr";
+    let isAdminLoggedIn = false;
 
     const translations = {
       mr: {
         langBtn: "English",
+        adminBtnText: "वेबसाईट मॉडिफाय करा",
         heroBadge: "ग्राफिक डिझायनर & व्हिडिओ एडिटर",
         heroTitle: "दर्जेदार मराठी ग्राफिक डिझाइन आणि व्हिडिओ एडिटिंग",
         heroDesc: "पारंपरिक लग्नपत्रिका, निवडणूक बॅनर, सण-उत्सव पोस्टर्स आणि 5-स्टार रेटेड सिनेमॅटिक शॉर्ट फिल्म्स व रील्स एडिटिंग.",
@@ -859,6 +489,7 @@
       },
       en: {
         langBtn: "मराठी",
+        adminBtnText: "Modify Website",
         heroBadge: "Graphic Designer & Video Editor",
         heroTitle: "Premium Marathi Graphic Design & Video Editing",
         heroDesc: "Specializing in traditional wedding cards, political banners, festive posters & 5-star rated cinematic short films.",
@@ -889,24 +520,17 @@
     function getYouTubeEmbedUrl(url) {
       if (!url) return "";
       let videoId = "";
-      if (url.includes("youtu.be/")) {
-        videoId = url.split("youtu.be/")[1].split("?")[0];
-      } else if (url.includes("youtube.com/watch")) {
-        const urlParams = new URLSearchParams(url.split("?")[1]);
-        videoId = urlParams.get("v");
-      } else if (url.includes("youtube.com/shorts/")) {
-        videoId = url.split("youtube.com/shorts/")[1].split("?")[0];
-      } else if (url.includes("youtube.com/embed/")) {
-        return url;
-      } else {
-        videoId = url;
-      }
+      if (url.includes("youtu.be/")) videoId = url.split("youtu.be/")[1].split("?")[0];
+      else if (url.includes("youtube.com/watch")) videoId = new URLSearchParams(url.split("?")[1]).get("v");
+      else if (url.includes("youtube.com/shorts/")) videoId = url.split("youtube.com/shorts/")[1].split("?")[0];
+      else if (url.includes("youtube.com/embed/")) return url;
+      else videoId = url;
       return `https://www.youtube-nocookie.com/embed/${videoId}`;
     }
 
     const createFallbackImage = (text) => {
-      const encodedText = encodeURIComponent(text || "Design Preview");
-      return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750"><rect fill="%231a1e27" width="600" height="750"/><text fill="%23ff5e14" font-family="sans-serif" font-size="22" font-weight="bold" x="50%" y="48%" text-anchor="middle">${encodedText}</text><text fill="%236c757d" font-family="sans-serif" font-size="15" x="50%" y="54%" text-anchor="middle">Design Preview</text></svg>`;
+      const encoded = encodeURIComponent(text || "Design Preview");
+      return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750"><rect fill="%231a1e27" width="600" height="750"/><text fill="%23ff5e14" font-family="sans-serif" font-size="22" font-weight="bold" x="50%" y="48%" text-anchor="middle">${encoded}</text></svg>`;
     };
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -919,35 +543,15 @@
       let activeFilter = "all";
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // स्मार्ट इमेज लोडर
-      function setupImageFallback(imgElement, item) {
-        let attempts = 0;
-        const fallbacks = item.fallbackPaths || [];
-
-        imgElement.onerror = () => {
-          if (attempts < fallbacks.length) {
-            imgElement.src = fallbacks[attempts];
-            attempts++;
-          } else {
-            imgElement.onerror = null;
-            imgElement.src = createFallbackImage(item.title_mr);
-          }
-        };
-      }
-
+      // इमेज रेंडर करणे
       function renderGallery() {
         galleryGrid.innerHTML = "";
-        const list = activeFilter === "all" 
-          ? myDesigns 
-          : myDesigns.filter(i => i.category === activeFilter);
+        const list = activeFilter === "all" ? myDesigns : myDesigns.filter(i => i.category === activeFilter);
 
-        if (list.length === 0) {
-          emptyState.classList.remove("hidden");
-        } else {
-          emptyState.classList.add("hidden");
-        }
+        if (list.length === 0) emptyState.classList.remove("hidden");
+        else emptyState.classList.add("hidden");
 
-        list.forEach(item => {
+        list.forEach((item, index) => {
           const title = currentLang === "mr" ? item.title_mr : item.title_en;
           const desc = currentLang === "mr" ? item.desc_mr : item.desc_en;
           const categoryName = translations[currentLang].categories[item.category] || item.category;
@@ -955,12 +559,9 @@
           const card = document.createElement("article");
           card.className = "gallery-card";
           card.innerHTML = `
+            ${isAdminLoggedIn ? `<button class="del-btn" onclick="deleteDesign('${item.id}', event)">हटवा ✕</button>` : ''}
             <div class="card-img-wrap">
-              <img 
-                src="${item.src}" 
-                alt="${title}" 
-                loading="lazy" 
-              />
+              <img src="${item.src}" alt="${title}" loading="lazy" />
             </div>
             <div class="card-info">
               <div>
@@ -971,36 +572,39 @@
           `;
 
           const img = card.querySelector("img");
-          setupImageFallback(img, item);
+          let attempts = 0;
+          const fallbacks = item.fallbackPaths || [];
+          img.onerror = () => {
+            if (attempts < fallbacks.length) {
+              img.src = fallbacks[attempts];
+              attempts++;
+            } else {
+              img.onerror = null;
+              img.src = createFallbackImage(item.title_mr);
+            }
+          };
 
-          card.addEventListener("click", () => {
-            openLightbox(img.src, title, desc);
-          });
-
+          card.addEventListener("click", () => openLightbox(img.src, title, desc));
           galleryGrid.appendChild(card);
         });
       }
 
+      // व्हिडिओ रेंडर करणे
       function renderVideos() {
         videoGrid.innerHTML = "";
-        myVideos.forEach(vid => {
+        myVideos.forEach((vid, index) => {
           const embedUrl = getYouTubeEmbedUrl(vid.youtubeUrl);
           const title = currentLang === "mr" ? vid.title_mr : vid.title_en;
           const tag = currentLang === "mr" ? vid.tag_mr : vid.tag_en;
           const desc = currentLang === "mr" ? vid.desc_mr : vid.desc_en;
           const waMsg = encodeURIComponent(`नमस्कार! मला तुमच्या '${title}' या व्हिडिओ एडिटिंग कामाबद्दल माहिती हवी आहे.`);
 
-          const videoCard = document.createElement("div");
-          videoCard.className = "video-card";
-          videoCard.innerHTML = `
+          const card = document.createElement("div");
+          card.className = "video-card";
+          card.innerHTML = `
+            ${isAdminLoggedIn ? `<button class="del-btn" onclick="deleteVideo('${vid.id}', event)">हटवा ✕</button>` : ''}
             <div class="video-wrapper">
-              <iframe 
-                src="${embedUrl}" 
-                title="${title}" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen 
-                loading="lazy">
-              </iframe>
+              <iframe src="${embedUrl}" title="${title}" allowfullscreen loading="lazy"></iframe>
             </div>
             <div class="video-info">
               <div>
@@ -1011,20 +615,22 @@
                 <h3>${title}</h3>
                 <p>${desc}</p>
               </div>
-              <a href="https://wa.me/918830021047?text=${waMsg}" target="_blank" class="card-contact-btn">
+              <a href="https://wa.me/918830021047?text=${waMsg}" target="_blank" class="btn btn-whatsapp" style="align-self: flex-start; padding: 0.4rem 0.9rem; font-size: 0.85rem; margin-top: 0.8rem;">
                 💬 ${translations[currentLang].cardWa}
               </a>
             </div>
           `;
-          videoGrid.appendChild(videoCard);
+          videoGrid.appendChild(card);
         });
       }
 
+      // भाषा बदलणे
       function updateLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
 
         document.getElementById("lang-btn-text").textContent = t.langBtn;
+        document.getElementById("admin-btn-text").textContent = t.adminBtnText;
         document.getElementById("hero-badge").textContent = t.heroBadge;
         document.getElementById("hero-title").textContent = t.heroTitle;
         document.getElementById("hero-desc").textContent = t.heroDesc;
@@ -1042,9 +648,7 @@
 
         filterBtns.forEach(btn => {
           const filterKey = btn.getAttribute("data-filter");
-          if (t.categories[filterKey]) {
-            btn.textContent = t.categories[filterKey];
-          }
+          if (t.categories[filterKey]) btn.textContent = t.categories[filterKey];
         });
 
         renderGallery();
@@ -1052,8 +656,7 @@
       }
 
       langToggleBtn.addEventListener("click", () => {
-        const nextLang = currentLang === "mr" ? "en" : "mr";
-        updateLanguage(nextLang);
+        updateLanguage(currentLang === "mr" ? "en" : "mr");
       });
 
       filterBtns.forEach(btn => {
@@ -1065,69 +668,193 @@
         });
       });
 
-      // Lightbox & Fullscreen Functionality
+      // Lightbox व Fullscreen
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
       const lightboxMedia = document.getElementById("lightbox-media");
       const lightboxTitle = document.getElementById("lightbox-title");
       const lightboxDesc = document.getElementById("lightbox-desc");
-      const lightboxClose = document.getElementById("lightbox-close");
-      const lightboxOverlay = document.getElementById("lightbox-overlay");
       const fullscreenBtn = document.getElementById("lightbox-fullscreen-btn");
 
       function openLightbox(src, title, desc) {
         lightboxImg.src = src;
-        lightboxImg.onerror = () => { lightboxImg.src = createFallbackImage(title); };
         lightboxTitle.textContent = title;
         lightboxDesc.textContent = desc;
-
         lightbox.classList.add("active");
         lightbox.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
       }
 
       function closeLightbox() {
-        if (document.fullscreenElement) {
-          document.exitFullscreen().catch(() => {});
-        }
+        if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
         lightbox.classList.remove("active");
         lightbox.setAttribute("aria-hidden", "true");
         lightboxImg.src = "";
         document.body.style.overflow = "";
       }
 
-      // फुल स्क्रीन टॉगल फंक्शन (मोबाईल व लॅपटॉप दोन्हीवर चालेल)
       function toggleFullScreen() {
         if (!document.fullscreenElement) {
-          if (lightboxImg.requestFullscreen) {
-            lightboxImg.requestFullscreen();
-          } else if (lightboxImg.webkitRequestFullscreen) {
-            lightboxImg.webkitRequestFullscreen();
-          } else if (lightboxImg.msRequestFullscreen) {
-            lightboxImg.msRequestFullscreen();
-          } else {
-            // Safari / iPhone Fallback
-            window.open(lightboxImg.src, '_blank');
-          }
+          if (lightboxImg.requestFullscreen) lightboxImg.requestFullscreen();
+          else if (lightboxImg.webkitRequestFullscreen) lightboxImg.webkitRequestFullscreen();
+          else window.open(lightboxImg.src, '_blank');
         } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          }
+          if (document.exitFullscreen) document.exitFullscreen();
         }
       }
 
       fullscreenBtn.addEventListener("click", toggleFullScreen);
       lightboxMedia.addEventListener("click", toggleFullScreen);
+      document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+      document.getElementById("lightbox-overlay").addEventListener("click", closeLightbox);
 
-      lightboxClose.addEventListener("click", closeLightbox);
-      lightboxOverlay.addEventListener("click", closeLightbox);
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lightbox.classList.contains("active")) {
-          closeLightbox();
+      // =========================================================
+      // ADMIN PANEL LOGIC (PASSWORD: game7122a)
+      // =========================================================
+      const adminModal = document.getElementById("admin-modal");
+      const adminLoginBtn = document.getElementById("admin-login-btn");
+      const adminCloseBtn = document.getElementById("admin-close-btn");
+      const adminPasswordInput = document.getElementById("admin-password-input");
+      const adminLoginSubmit = document.getElementById("admin-login-submit");
+      const adminErrorMsg = document.getElementById("admin-error-msg");
+      const adminLockScreen = document.getElementById("admin-lock-screen");
+      const adminDashboardScreen = document.getElementById("admin-dashboard-screen");
+
+      adminLoginBtn.addEventListener("click", () => {
+        adminModal.classList.add("active");
+        adminModal.setAttribute("aria-hidden", "false");
+        if (!isAdminLoggedIn) {
+          adminLockScreen.style.display = "block";
+          adminDashboardScreen.style.display = "none";
+          adminPasswordInput.value = "";
+          adminErrorMsg.style.display = "none";
+          adminPasswordInput.focus();
+        } else {
+          adminLockScreen.style.display = "none";
+          adminDashboardScreen.style.display = "block";
         }
       });
 
-      // Default लोड मराठी
+      function closeAdmin() {
+        adminModal.classList.remove("active");
+        adminModal.setAttribute("aria-hidden", "true");
+      }
+      adminCloseBtn.addEventListener("click", closeAdmin);
+      document.getElementById("admin-modal-overlay").addEventListener("click", closeAdmin);
+
+      // पासवर्ड पडताळणी
+      adminLoginSubmit.addEventListener("click", () => {
+        if (adminPasswordInput.value === "game7122a") {
+          isAdminLoggedIn = true;
+          adminLockScreen.style.display = "none";
+          adminDashboardScreen.style.display = "block";
+          adminErrorMsg.style.display = "none";
+          renderGallery();
+          renderVideos();
+        } else {
+          adminErrorMsg.style.display = "block";
+        }
+      });
+
+      document.getElementById("admin-logout-btn").addEventListener("click", () => {
+        isAdminLoggedIn = false;
+        closeAdmin();
+        renderGallery();
+        renderVideos();
+      });
+
+      // Admin Tabs Switch
+      const tabDesignBtn = document.getElementById("tab-design-btn");
+      const tabVideoBtn = document.getElementById("tab-video-btn");
+      const addDesignForm = document.getElementById("add-design-form");
+      const addVideoForm = document.getElementById("add-video-form");
+
+      tabDesignBtn.addEventListener("click", () => {
+        tabDesignBtn.classList.add("active");
+        tabVideoBtn.classList.remove("active");
+        addDesignForm.style.display = "block";
+        addVideoForm.style.display = "none";
+      });
+
+      tabVideoBtn.addEventListener("click", () => {
+        tabVideoBtn.classList.add("active");
+        tabDesignBtn.classList.remove("active");
+        addVideoForm.style.display = "block";
+        addDesignForm.style.display = "none";
+      });
+
+      // नवीन डिझाईन फोटो अपलोड करणे (Local Storage मध्ये लगेच सेव्ह होते)
+      addDesignForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fileInput = document.getElementById("design-file-input");
+        const file = fileInput.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const newDesign = {
+            id: "design_" + Date.now(),
+            category: document.getElementById("design-category-input").value,
+            src: evt.target.result, // डायरेक्ट इमेज डेटा
+            title_mr: document.getElementById("design-title-mr").value,
+            title_en: document.getElementById("design-title-en").value,
+            desc_mr: document.getElementById("design-desc-mr").value || "",
+            desc_en: document.getElementById("design-title-en").value
+          };
+
+          myDesigns.unshift(newDesign);
+          localStorage.setItem("rushi_portfolio_designs", JSON.stringify(myDesigns));
+          renderGallery();
+          addDesignForm.reset();
+          closeAdmin();
+          alert("अभिनंदन! तुमची नवीन डिझाईन यशस्वीरित्या सेव्ह झाली आहे!");
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // नवीन YouTube व्हिडिओ जोडणे
+      addVideoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const newVideo = {
+          id: "video_" + Date.now(),
+          youtubeUrl: document.getElementById("video-url-input").value,
+          rating: document.getElementById("video-rating-input").value || "★ 5.0 Public Rating",
+          tag_mr: document.getElementById("video-tag-input").value,
+          tag_en: document.getElementById("video-tag-input").value,
+          title_mr: document.getElementById("video-title-mr").value,
+          title_en: document.getElementById("video-title-en").value,
+          desc_mr: document.getElementById("video-desc-mr").value,
+          desc_en: document.getElementById("video-desc-mr").value
+        };
+
+        myVideos.unshift(newVideo);
+        localStorage.setItem("rushi_portfolio_videos", JSON.stringify(myVideos));
+        renderVideos();
+        addVideoForm.reset();
+        closeAdmin();
+        alert("अभिनंदन! नवीन YouTube व्हिडिओ यशस्वीरित्या जोडला गेला आहे!");
+      });
+
+      // ग्लोबल डिलीट फंक्शन्स
+      window.deleteDesign = function(id, event) {
+        event.stopPropagation();
+        if (confirm("तुम्हाला खात्री आहे का ही डिझाईन हटवायची आहे?")) {
+          myDesigns = myDesigns.filter(item => item.id !== id);
+          localStorage.setItem("rushi_portfolio_designs", JSON.stringify(myDesigns));
+          renderGallery();
+        }
+      };
+
+      window.deleteVideo = function(id, event) {
+        event.stopPropagation();
+        if (confirm("तुम्हाला खात्री आहे का हा व्हिडिओ हटवायचा आहे?")) {
+          myVideos = myVideos.filter(item => item.id !== id);
+          localStorage.setItem("rushi_portfolio_videos", JSON.stringify(myVideos));
+          renderVideos();
+        }
+      };
+
+      // सुरुवातीला मराठीत लोड करा
       updateLanguage("mr");
     });
   </script>
