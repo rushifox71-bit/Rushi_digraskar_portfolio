@@ -180,14 +180,14 @@
     }
 
     .btn-whatsapp {
-      background: #205c3b;
+      background: #1ebe5d;
       color: #fff;
       border: 1px solid #2ecc71;
     }
 
     .btn-whatsapp:hover {
-      background: var(--whatsapp);
-      color: #000;
+      background: #179e4d;
+      color: #fff;
       transform: translateY(-2px);
     }
 
@@ -211,7 +211,7 @@
       color: var(--text-muted);
     }
 
-    /* Category Filters */
+    /* Filters */
     .filter-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -395,7 +395,7 @@
     .card-contact-btn {
       align-self: flex-start;
       font-size: 0.85rem;
-      padding: 0.4rem 0.9rem;
+      padding: 0.45rem 0.95rem;
       border-radius: 6px;
       background: rgba(37, 211, 102, 0.15);
       color: var(--whatsapp);
@@ -606,7 +606,7 @@
       <p id="gallery-desc">खालील श्रेणी निवडून डिझाईन्स पाहा:</p>
     </div>
 
-    <!-- Filter Buttons -->
+    <!-- Category Filters -->
     <div class="filter-wrapper" id="filter-wrapper">
       <button class="filter-btn active" data-filter="all">सर्व (All)</button>
       <button class="filter-btn" data-filter="wedding-designs">लग्नपत्रिका</button>
@@ -617,7 +617,7 @@
       <button class="filter-btn" data-filter="photo-manipulation">फोटो मॅनिप्युलेशन</button>
     </div>
 
-    <!-- Images Grid -->
+    <!-- Dynamic Images Grid -->
     <div class="gallery-grid" id="gallery-grid"></div>
 
     <div id="empty-state" class="empty-state hidden">
@@ -679,14 +679,20 @@
        ========================================================= -->
   <script>
     /* =========================================================
-       १. ग्राफिक डिझाइन लिस्ट (यात तुमची Lagnapatrika फाईल जोडली आहे)
+       १. ग्राफिक डिझाइन लिस्ट (तुमचा नेमका GitHub चा पाथ इथे अपडेट केला आहे)
        ========================================================= */
     const myDesigns = [
       {
         id: "wed-01",
         category: "wedding-designs",
-        // तुम्ही सांगितलेली फाईल इथे सेट केली आहे:
-        src: "assets/images/wedding-designs/Lagnapatrika_Design.webp",
+        // तुमच्या GitHub वरील फोल्डर पाथनुसार बरोबर सेट केले आहे:
+        src: "%22assets/images/wedding-designs/Lagnapatrika_Design.webp",
+        // भविष्यात फोल्डरचे नाव बदलले तरी ऑटो-डिटेक्ट करण्यासाठी पर्यायी पाथ:
+        fallbackPaths: [
+          '"assets/images/wedding-designs/Lagnapatrika_Design.webp',
+          'assets/images/wedding-designs/Lagnapatrika_Design.webp',
+          'Lagnapatrika_Design.webp'
+        ],
         title_mr: "शाही मराठमोळी लग्नपत्रिका डिझाईन",
         title_en: "Royal Traditional Marathi Wedding Invitation",
         desc_mr: "पारंपरिक मराठमोळे सुलेखन (Typography) आणि राजेशाही लुक असलेली खास लग्नपत्रिका डिझाईन.",
@@ -695,7 +701,8 @@
       {
         id: "md-01",
         category: "marathi-designs",
-        src: "assets/images/marathi-designs/shivaji-maharaj-poster.webp",
+        src: "%22assets/images/marathi-designs/shivaji-maharaj-poster.webp",
+        fallbackPaths: ['assets/images/marathi-designs/shivaji-maharaj-poster.webp'],
         title_mr: "शिवराज्याभिषेक सोहळा विशेष पोस्टर",
         title_en: "Shivrajyabhishek Day Special Poster",
         desc_mr: "शिवराज्याभिषेक दिनानिमित्त तयार केलेले डिजिटल कॅलिग्राफी पोस्टर.",
@@ -704,7 +711,8 @@
       {
         id: "fest-01",
         category: "festival-designs",
-        src: "assets/images/festival-designs/ganeshotsav-creative.webp",
+        src: "%22assets/images/festival-designs/ganeshotsav-creative.webp",
+        fallbackPaths: ['assets/images/festival-designs/ganeshotsav-creative.webp'],
         title_mr: "गणेशोत्सव आगमन विशेष बॅनर",
         title_en: "Ganeshotsav Arrival Special Banner",
         desc_mr: "गणेशोत्सवासाठी खास तयार केलेले सोशल मीडिया डिझाईन.",
@@ -713,7 +721,8 @@
       {
         id: "pol-01",
         category: "political-posters",
-        src: "assets/images/political-posters/election-campaign.webp",
+        src: "%22assets/images/political-posters/election-campaign.webp",
+        fallbackPaths: ['assets/images/political-posters/election-campaign.webp'],
         title_mr: "निवडणूक प्रचार अधिकृत बॅनर",
         title_en: "Election Campaign Official Poster",
         desc_mr: "स्थानिक स्वराज्य संस्था व विधानसभा प्रचार पोस्टर लेआउट.",
@@ -722,7 +731,8 @@
       {
         id: "sm-01",
         category: "social-media",
-        src: "assets/images/social-media/brand-post.webp",
+        src: "%22assets/images/social-media/brand-post.webp",
+        fallbackPaths: ['assets/images/social-media/brand-post.webp'],
         title_mr: "व्यवसाय ब्रँडिंग सोशल मीडिया पोस्ट",
         title_en: "Brand Advertising Social Media Creative",
         desc_mr: "हॉटेल व फूड बिझनेससाठी डिझाइन केलेले इंस्टाग्राम क्रिएटिव्ह.",
@@ -731,7 +741,8 @@
       {
         id: "pm-01",
         category: "photo-manipulation",
-        src: "assets/images/photo-manipulation/warrior-concept.webp",
+        src: "%22assets/images/photo-manipulation/warrior-concept.webp",
+        fallbackPaths: ['assets/images/photo-manipulation/warrior-concept.webp'],
         title_mr: "ऐतिहासिक संकल्पना फोटो मॅनिप्युलेशन",
         title_en: "Historical Concept Photo Manipulation",
         desc_mr: "मल्टीपल इमेजेस आणि सिनेमॅटिक लायटिंगचे डिजिटल आर्टवर्क.",
@@ -740,36 +751,35 @@
     ];
 
     /* =========================================================
-       २. फक्त दोनच YOUTUBE व्हिडिओ (तुमचा पहिला शॉर्ट फिल्म व्हिडिओ जोडला आहे)
+       २. फक्त २ यूट्यूब व्हिडिओ (तुमची शॉर्ट फिल्म)
        ========================================================= */
     const myVideos = [
       {
         id: "vid-01",
-        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", // तुमची मूळ शॉर्ट फिल्म लिंक
+        youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM",
         rating: "★ 5.0 Public Rating",
         tag_mr: "शॉर्ट फिल्म (Self-Edited)",
         tag_en: "Short Film (Self-Edited)",
         title_mr: "मराठी शॉर्ट फिल्म | सिनेमॅटिक एडिटिंग",
         title_en: "Marathi Short Film | Cinematic Editing",
         desc_mr: "माझ्याद्वारे स्वतः एडिट केलेली मराठी शॉर्ट फिल्म; ज्याला प्रेक्षकांकडून उत्कृष्ट प्रतिसाद आणि 5-स्टार रेटिंग मिळाली आहे.",
-        desc_en: "Self-edited Marathi short film, acclaimed by the audience with a 5-star rating for its pacing and story flow."
+        desc_en: "Self-edited Marathi short film, acclaimed by the audience with a 5-star rating for its pacing and storytelling."
       },
       {
         id: "vid-02",
-        // भविष्यात दुसरा व्हिडिओ असल्यास इथे URL बदला:
         youtubeUrl: "https://www.youtube.com/watch?v=4zNfkb6fWRM", 
         rating: "Featured Work",
         tag_mr: "मोशन पोस्टर्स / रील्स",
         tag_en: "Motion Poster / Reel",
         title_mr: "सिनेमॅटिक मोशन ग्राफिक्स आणि रील्स एडिटिंग",
         title_en: "Cinematic Motion Graphics & Video Editing",
-        desc_mr: "आधुनिक साऊंड इफेक्ट्स आणि कलर टोनिंगसह तयार केलेले प्रोफेशनल व्हिडिओ एडिटिंग काम.",
+        desc_mr: "आधुनिक साऊंड इफेक्ट्स आणि कलर टोनिंगसह तयार केलेले व्यावसायिक व्हिडिओ एडिटिंग काम.",
         desc_en: "Professional creative video editing crafted with modern sound design and custom color grading."
       }
     ];
 
     /* =========================================================
-       ३. भाषा ट्रान्सलेशन डिक्शनरी (मराठी <-> English)
+       ३. भाषा ट्रान्सलेशन
        ========================================================= */
     let currentLang = "mr";
 
@@ -830,7 +840,6 @@
       }
     };
 
-    /* Helper: Extract YouTube ID cleanly */
     function getYouTubeEmbedUrl(url) {
       if (!url) return "";
       let videoId = "";
@@ -849,7 +858,6 @@
       return `https://www.youtube-nocookie.com/embed/${videoId}`;
     }
 
-    // Fallback card if image not found
     const createFallbackImage = (text) => {
       const encodedText = encodeURIComponent(text || "Design Preview");
       return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750"><rect fill="%231a1e27" width="600" height="750"/><text fill="%23ff5e14" font-family="sans-serif" font-size="22" font-weight="bold" x="50%" y="48%" text-anchor="middle">${encodedText}</text><text fill="%236c757d" font-family="sans-serif" font-size="15" x="50%" y="54%" text-anchor="middle">Click to Inquire on WhatsApp</text></svg>`;
@@ -865,7 +873,22 @@
       let activeFilter = "all";
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Render Graphic Designs
+      // स्मार्ट इमेज लोडर (जर पहिला पाथ नाही मिळाला तर पर्यायी पाथ आपोआप शोधेल)
+      function setupImageFallback(imgElement, item) {
+        let attempts = 0;
+        const fallbacks = item.fallbackPaths || [];
+
+        imgElement.onerror = () => {
+          if (attempts < fallbacks.length) {
+            imgElement.src = fallbacks[attempts];
+            attempts++;
+          } else {
+            imgElement.onerror = null;
+            imgElement.src = createFallbackImage(item.title_mr);
+          }
+        };
+      }
+
       function renderGallery() {
         galleryGrid.innerHTML = "";
         const list = activeFilter === "all" 
@@ -890,8 +913,7 @@
               <img 
                 src="${item.src}" 
                 alt="${title}" 
-                loading="lazy" 
-                onerror="this.onerror=null; this.src='${createFallbackImage(title)}';"
+                loading="lazy"
               />
             </div>
             <div class="card-info">
@@ -902,15 +924,17 @@
             </div>
           `;
 
+          const img = card.querySelector("img");
+          setupImageFallback(img, item);
+
           card.addEventListener("click", () => {
-            openLightbox(item.src, title, desc);
+            openLightbox(img.src, title, desc);
           });
 
           galleryGrid.appendChild(card);
         });
       }
 
-      // Render Videos (फक्त २ प्रमुख व्हिडिओ)
       function renderVideos() {
         videoGrid.innerHTML = "";
         myVideos.forEach(vid => {
@@ -950,7 +974,6 @@
         });
       }
 
-      // Update Language
       function updateLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
@@ -986,7 +1009,6 @@
         updateLanguage(nextLang);
       });
 
-      // Filter clicks
       filterBtns.forEach(btn => {
         btn.addEventListener("click", () => {
           filterBtns.forEach(b => b.classList.remove("active"));
@@ -1007,7 +1029,6 @@
 
       function openLightbox(src, title, desc) {
         lightboxImg.src = src;
-        lightboxImg.onerror = () => { lightboxImg.src = createFallbackImage(title); };
         lightboxTitle.textContent = title;
         lightboxDesc.textContent = desc;
 
@@ -1035,7 +1056,7 @@
         }
       });
 
-      // सुरुवातीला मराठी भाषेत लोड करा
+      // Default लोड मराठी
       updateLanguage("mr");
     });
   </script>
